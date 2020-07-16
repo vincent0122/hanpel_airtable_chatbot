@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 
-app.use('/api', apiRouter);
+app.use('/.netlify/functions/api', apiRouter);
 var aaa = "test";
 
 apiRouter.post('/sayHello', function(req, res) {
