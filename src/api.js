@@ -1,7 +1,8 @@
 const express = require('express');
+const asyncify = require('express-asyncify');
 const serverless = require('serverless-http');
 
-const app = express();
+const app = asyncify(express());
 const apiRouter = express.Router();
 
 const logger = require('morgan');
@@ -19,32 +20,38 @@ app.use(bodyParser.urlencoded({
 app.use('/.netlify/functions/api', apiRouter);
 var aaa = "test";
 
-apiRouter.post('/sayHello', function(req, res) {
-  const responseBody = {
-    version: "2.0",
-    template: {
-      outputs: [
-        {
-          simpleText: {
-            text: aaa
-          }
-        }
-      ]
+
+apiRouter.post('/sayHello', async (req, res) => {
+  
+  await base('test').create({
+    "이름": "가",
+    "내용": "나"
+  }, function(err, record) {
+    if (err) {
+      console.error(err);
+      return;
     }
-  };
+    console.log(record.getId());
+  });  
+ 
+  
 
-  res.status(200).send(responseBody);
-
-    base('test').create({
-      "이름": "가",
-      "내용": "나"
-    }, function(err, record) {
-      if (err) {
-        console.error(err);
-        return;
+    const responseBody = {
+      version: "2.0",
+      template: {
+        outputs: [
+          {
+            simpleText: {
+              text: aaa
+            }
+          }
+        ]
       }
-      console.log(record.getId());
-    });  
+    };
+  
+    res.status(200).send(responseBody);
+   
+    
 });
 
 apiRouter.post('/showHello', function(req, res) {
