@@ -26,13 +26,7 @@ apiRouter.post('/sayHello', async (req, res) => {
   await base('test').create({
     "이름": "가",
     "내용": "나"
-  }, function(err, record) {
-    if (err) {
-      console.error(err);
-      return;
-    }
-    console.log(record.getId());
-  });  
+  });
  
   
 
