@@ -18,7 +18,7 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.use('/.netlify/functions/api', apiRouter);
-var aaa = "test";
+var aaa = "test5";
 
 
 apiRouter.post('/sayHello', async (req, res) => {
