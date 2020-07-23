@@ -35,8 +35,8 @@ apiRouter.post('/sayHello', async (req, res) => {
   
   await base('영업').create({
      "날짜": date,
-        "작성자": writer,
-        "내용" : content
+     "작성자": "임진석",
+    // "내용" : content
       });  
   
  
