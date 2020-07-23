@@ -32,7 +32,7 @@ apiRouter.post('/sayHello', async (req, res) => {
   var wri = writer.replace(/\"/g, "");
   var pic = writer.replace(/\"/g, "");
   var pic = pic.substring(5,pic.length-1);
-  //var pic2 = '"' + pic2 + '"';
+  var pic = '"' + pic + '"';
   //var pic3 = JSON.stringify(req.body);
 
   switch (wri){
@@ -57,7 +57,7 @@ apiRouter.post('/sayHello', async (req, res) => {
         outputs: [
           {
             simpleText: {
-              text: "입력 되었습니다!!"
+              text: pic
             }
           }
         ]
