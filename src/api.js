@@ -23,15 +23,16 @@ apiRouter.post('/sayHello', async (req, res) => {
 
   var today = new Date();
   var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();//
+  
   var content = JSON.stringify(req.body.action.detailParams.type01_q01s01.origin); // "하나\n"
+  var writer = JSON.stringify(req.body.userRequest.user.id);  // "2c2e571aa09087b61c573115011b68b41683e3634ca15ee80f7fb14c44765c4343"
+  var pic = JSON.stringify(req.body.action.detailParams.pic.origin);
   
   var contents = content.replace(/\"/g, "");
-  var writer = JSON.stringify(req.body.userRequest.user.id);  // "2c2e571aa09087b61c573115011b68b41683e3634ca15ee80f7fb14c44765c4343"
   var wri = writer.replace(/\"/g, "");
-  var pic = JSON.stringify(req.body.action.detailParams.pic.origin);
-  var pic = writer.replace(/\"/g, "");
-  var pic = pic.substring(5,pic.length-1);
-  var pic2 = '"' + pic + '"';
+  var pic2 = writer.replace(/\"/g, "");
+  var pic2 = pic2.substring(5,pic2.length-1);
+  var pic2 = '"' + pic2 + '"';
   var pic3 = JSON.stringify(req.body);
 
   switch (wri){
@@ -44,7 +45,7 @@ apiRouter.post('/sayHello', async (req, res) => {
     "Attachments": [{"url": pic}], 
     "날짜": date,
      "작성자": pic,
-     "내용" : pic3
+     "내용" : pic2
       });  
   
  
@@ -56,7 +57,7 @@ apiRouter.post('/sayHello', async (req, res) => {
         outputs: [
           {
             simpleText: {
-              text: "입력 되었습니닷"
+              text: pic3
             }
           }
         ]
