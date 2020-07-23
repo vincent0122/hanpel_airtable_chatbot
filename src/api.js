@@ -31,7 +31,7 @@ apiRouter.post('/sayHello', async (req, res) => {
   var pic = JSON.stringify(req.body.action.detailParams.pic.origin);
   var pic = writer.replace(/\"/g, "");
   var pic = pic.substring(5,pic.length-1);
-  var pic = '"' + pic + '"';
+  //var pic = '"' + pic + '"';
 
   switch (wri){
      case "2c2e571aa09087b61c573115011b68b41683e3634ca15ee80f7fb14c44765c4343" : 
