@@ -30,8 +30,8 @@ apiRouter.post('/sayHello', async (req, res) => {
   
   var contents = content.replace(/\"/g, "");
   var wri = writer.replace(/\"/g, "");
-  var pic2 = writer.replace(/\"/g, "");
-  var pic2 = pic.substring(5,pic.length-1);
+  var pic2 = pic.replace(/\"/g, "");
+  var pic2 = pic2.substring(5,pic2.length-1);
   //var pic2 = '"' + pic + '"';
   //var pic3 = JSON.stringify(req.body);
 
