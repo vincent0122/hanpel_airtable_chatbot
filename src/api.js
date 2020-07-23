@@ -76,7 +76,7 @@ apiRouter.post('/showHello', function(req, res) {
           //  imageUrl: "https://t1.daumcdn.net/friends/prod/category/M001_friends_ryan2.jpg",
           //  altText: "HELLO"
           simpleText: {
-            text: x 
+            text: y 
            
           }
         }
