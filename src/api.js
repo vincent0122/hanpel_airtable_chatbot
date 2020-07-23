@@ -24,7 +24,7 @@ apiRouter.post('/sayHello', async (req, res) => {
   var today = new Date();
   var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
   var content = JSON.stringify(req.body.userRequest.utterance); // "하나\n"
-  var content = content.substring(0,con.length-2);
+  var content = content.substring(0,content.length-2);
   var writer = JSON.stringify(req.body.userRequest.user.id);  // "2c2e571aa09087b61c573115011b68b41683e3634ca15ee80f7fb14c44765c4343"
 
   switch (writer){
