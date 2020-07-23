@@ -52,6 +52,7 @@ apiRouter.post('/showHello', function(req, res) {
   console.log(req.body);
   //var x = JSON.stringify(req.body.);
   var x = JSON.stringify(req.body.userRequest.utterance);
+  var y = JSON.stringify(req.body.userRequest.user.id);
   
   const responseBody = {
 
@@ -63,7 +64,7 @@ apiRouter.post('/showHello', function(req, res) {
           //  imageUrl: "https://t1.daumcdn.net/friends/prod/category/M001_friends_ryan2.jpg",
           //  altText: "HELLO"
           simpleText: {
-            text: x
+            text: x , text: y
            
           }
         }
