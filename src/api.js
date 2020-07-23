@@ -30,10 +30,10 @@ apiRouter.post('/sayHello', async (req, res) => {
   
   var contents = content.replace(/\"/g, "");
   var wri = writer.replace(/\"/g, "");
-  var pic2 = writer.replace(/\"/g, "");
-  var pic2 = pic2.substring(5,pic2.length-1);
-  var pic2 = '"' + pic2 + '"';
-  var pic3 = JSON.stringify(req.body);
+  var pic = writer.replace(/\"/g, "");
+  var pic = pic.substring(5,pic.length-1);
+  //var pic2 = '"' + pic2 + '"';
+  //var pic3 = JSON.stringify(req.body);
 
   switch (wri){
      case "2c2e571aa09087b61c573115011b68b41683e3634ca15ee80f7fb14c44765c4343" : 
@@ -44,8 +44,8 @@ apiRouter.post('/sayHello', async (req, res) => {
   await base('영업').create({
     "Attachments": [{"url": pic}], 
     "날짜": date,
-     "작성자": pic,
-     "내용" : pic2
+     "작성자": wri2,
+     "내용" : contents
       });  
   
  
@@ -57,7 +57,7 @@ apiRouter.post('/sayHello', async (req, res) => {
         outputs: [
           {
             simpleText: {
-              text: pic3
+              text: "입력 되었습니다!!"
             }
           }
         ]
