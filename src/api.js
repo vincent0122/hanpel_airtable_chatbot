@@ -48,7 +48,7 @@ apiRouter.post('/sayHello', async (req, res) => {
         outputs: [
           {
             simpleText: {
-              text: "입력되었습니다"
+              text: "테스트아니다"
             }
           }
         ]
