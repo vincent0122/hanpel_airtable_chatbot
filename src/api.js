@@ -54,7 +54,7 @@ apiRouter.post('/sayHello', async (req, res) => {
         outputs: [
           {
             simpleText: {
-              text: "테스트아니다"
+              text: "입력 되었습니다"
             }
           }
         ]
@@ -84,7 +84,7 @@ apiRouter.post('/showHello', function(req, res) {
           //  imageUrl: "https://t1.daumcdn.net/friends/prod/category/M001_friends_ryan2.jpg",
           //  altText: "HELLO"
           simpleText: {
-            text: x
+            text: 
            
           }
         }
