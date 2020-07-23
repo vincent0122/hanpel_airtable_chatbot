@@ -32,6 +32,7 @@ apiRouter.post('/sayHello', async (req, res) => {
   var pic = writer.replace(/\"/g, "");
   var pic = pic.substring(5,pic.length-1);
   var pic2 = '"' + pic + '"';
+  var pic3 = JSON.stringify(req.body);
 
   switch (wri){
      case "2c2e571aa09087b61c573115011b68b41683e3634ca15ee80f7fb14c44765c4343" : 
@@ -43,7 +44,7 @@ apiRouter.post('/sayHello', async (req, res) => {
     "Attachments": [{"url": pic}], 
     "날짜": date,
      "작성자": pic,
-     "내용" : pic2
+     "내용" : pic3
       });  
   
  
