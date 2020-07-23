@@ -45,7 +45,7 @@ apiRouter.post('/sayHello', async (req, res) => {
     "Attachments": [{"url": pic2}], 
     "날짜": date,
      "작성자": wri2,
-     "내용" : contents
+     "내용" : pic2
       });  
   
  
