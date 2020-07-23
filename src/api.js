@@ -29,8 +29,7 @@ apiRouter.post('/sayHello', async (req, res) => {
   var writer = JSON.stringify(req.body.userRequest.user.id);  // "2c2e571aa09087b61c573115011b68b41683e3634ca15ee80f7fb14c44765c4343"
   var wri = writer.replace(/\"/g, "");
   var pic = JSON.stringify(req.body.action.detailParams.pic.origin);
-  var pic2 = pic.replcae((/\"/g, "");
-  var pic3 = pic2.substring(5,b.length-1);                         
+  var pic = pic.substring(5,b.length-1);                         
 
   switch (wri){
      case "2c2e571aa09087b61c573115011b68b41683e3634ca15ee80f7fb14c44765c4343" : 
@@ -39,7 +38,7 @@ apiRouter.post('/sayHello', async (req, res) => {
    }
   
   await base('영업').create({
-    "Attachments": [{"url": pic3}], 
+    "Attachments": [{"url": pic}], 
     "날짜": date,
      "작성자": wri2,
      "내용" : contents
@@ -72,7 +71,7 @@ apiRouter.post('/showHello', function(req, res) {
   var x = JSON.stringify(req.body);
   //var yy = JSON.stringify(req.body.userRequest.user.id);  // "2c2e571aa09087b61c573115011b68b41683e3634ca15ee80f7fb14c44765c4343"
   //var y = JSON.stringify(req.body.action.detailParams.type01_q01s01.origin);  // "2c2e571aa09087b61c573115011b68b41683e3634ca15ee80f7fb14c44765c4343"
-  //var z = JSON.stringify(req.body.action.detailParams.pic.origin);
+  var z = JSON.stringify(req.body.action.detailParams.pic.origin);
   
   const responseBody = {
 
@@ -84,7 +83,7 @@ apiRouter.post('/showHello', function(req, res) {
           //  imageUrl: "https://t1.daumcdn.net/friends/prod/category/M001_friends_ryan2.jpg",
           //  altText: "HELLO"
           simpleText: {
-            text: x
+            text: 
            
           }
         }
