@@ -67,7 +67,7 @@ apiRouter.post('/showHello', function(req, res) {
   //var x = JSON.stringify(req.body.);
   var x = JSON.stringify(req.body.userRequest.utterance);
   // var y = JSON.stringify(req.body.userRequest.user.id);  // "2c2e571aa09087b61c573115011b68b41683e3634ca15ee80f7fb14c44765c4343"
-  var y = JSON.stringify(req.body.action.type01_q01s01.origin);  // "2c2e571aa09087b61c573115011b68b41683e3634ca15ee80f7fb14c44765c4343"
+  var y = JSON.stringify(req.body.action.detailParams.type01_q01s01.origin);  // "2c2e571aa09087b61c573115011b68b41683e3634ca15ee80f7fb14c44765c4343"
   
   const responseBody = {
 
