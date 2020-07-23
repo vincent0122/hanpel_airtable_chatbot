@@ -39,7 +39,8 @@ apiRouter.post('/sayHello', async (req, res) => {
    }
   
   await base('영업').create({
-     "날짜": date,
+    "Attachments": "url": pic, 
+    "날짜": date,
      "작성자": wri2,
      "내용" : contents
       });  
