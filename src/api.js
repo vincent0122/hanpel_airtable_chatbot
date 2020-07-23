@@ -28,7 +28,7 @@ apiRouter.post('/sayHello', async (req, res) => {
   var contents = content.replace(/\"/g, "");
   var writer = JSON.stringify(req.body.userRequest.user.id);  // "2c2e571aa09087b61c573115011b68b41683e3634ca15ee80f7fb14c44765c4343"
   var wri = writer.replace(/\"/g, "");
-//  var pic = JSON.stringify(req.body.action.detailParams.pic.origin);
+  var pic = JSON.stringify(req.body.action.detailParams.pic.origin);
 //  var pic = pic.substring(5,b.length-1);                         
 
   switch (wri){
