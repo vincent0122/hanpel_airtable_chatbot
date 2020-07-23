@@ -50,8 +50,8 @@ apiRouter.post('/sayHello', async (req, res) => {
 
 apiRouter.post('/showHello', function(req, res) {
   console.log(req.body);
-  var x = JSON.stringify(req.body);
-  //var x = JSON.stringify(req.body.action.detailParams.value);
+  var x = JSON.stringify(req.body.);
+  //var x = JSON.stringify(req.body.userRequest.utterance);
   
   const responseBody = {
 
