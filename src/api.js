@@ -25,17 +25,17 @@ apiRouter.post('/sayHello', async (req, res) => {
   var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();//
   var content = JSON.stringify(req.body.userRequest.utterance); // "하나\n"
   var content = content.substring(0,content.length-2);
-  var writer = JSON.stringify(req.body.userRequest.user.id);  // "2c2e571aa09087b61c573115011b68b41683e3634ca15ee80f7fb14c44765c4343"
+//  var writer = JSON.stringify(req.body.userRequest.user.id);  // "2c2e571aa09087b61c573115011b68b41683e3634ca15ee80f7fb14c44765c4343"
 
-  switch (writer){
-    case "2c2e571aa09087b61c573115011b68b41683e3634ca15ee80f7fb14c44765c4343" : 
-        var writer = "임진강";
-        break;
-}
+//  switch (writer){
+//case "2c2e571aa09087b61c573115011b68b41683e3634ca15ee80f7fb14c44765c4343" : 
+ //       var writer = "임진강";
+  //      break;
+//}
   
   await base('영업').create({
      "날짜": date,
-     "작성자": writer,
+     "작성자": "임진강",
      "내용" : content
       });  
   
