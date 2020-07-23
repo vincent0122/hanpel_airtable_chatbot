@@ -19,19 +19,19 @@ app.use(bodyParser.urlencoded({
 
 app.use('/.netlify/functions/api', apiRouter);
 
-var today = new Date();
-var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-var content = JSON.stringify(req.body.userRequest.utterance); // "하나\n"
-var content = content.substring(0,con.length-2);
-var writer = JSON.stringify(req.body.userRequest.user.id);  // "2c2e571aa09087b61c573115011b68b41683e3634ca15ee80f7fb14c44765c4343"
+apiRouter.post('/sayHello', async (req, res) => {
 
-switch (writer){
+  var today = new Date();
+  var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+  var content = JSON.stringify(req.body.userRequest.utterance); // "하나\n"
+  var content = content.substring(0,con.length-2);
+  var writer = JSON.stringify(req.body.userRequest.user.id);  // "2c2e571aa09087b61c573115011b68b41683e3634ca15ee80f7fb14c44765c4343"
+
+  switch (writer){
     case "2c2e571aa09087b61c573115011b68b41683e3634ca15ee80f7fb14c44765c4343" : 
         var writer = "임진석";
         break;
 }
-
-apiRouter.post('/sayHello', async (req, res) => {
   
   await base('영업').create({
      "날짜": date,
