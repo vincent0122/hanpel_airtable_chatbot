@@ -65,7 +65,7 @@ apiRouter.post('/sayHello', async (req, res) => {
         outputs: [
           {
             simpleText: {
-              text: pic4
+              text: pic
             }
           }
         ]
