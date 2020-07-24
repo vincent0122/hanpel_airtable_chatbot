@@ -44,11 +44,11 @@ apiRouter.post('/sayHello', async (req, res) => {
   
   await base('영업').create({
     "Attachments": [
-      {"url": pic3[0]},
-      {"url": pic3[1]},
-      {"url": pic3[2]},
-      {"url": pic3[3]},
-      {"url": pic3[4]},    
+  //    {"url": pic3[0]},
+  //    {"url": pic3[1]},
+ //     {"url": pic3[2]},
+ //     {"url": pic3[3]},
+ //     {"url": pic3[4]},    
     ], 
     "날짜": date,
      //"작성자": wri2,
