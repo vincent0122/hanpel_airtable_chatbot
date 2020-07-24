@@ -62,7 +62,7 @@ apiRouter.post('/sayHello', async (req, res) => {
         var wri2 = "송혜주";
         break;
       
-      case "" : 
+      case "66403b9819685f49eb67931a9d6ac55cde1cd5107fc47c33ee04d3b2ae710348b5" : 
         var wri2 = "이선화";
         break;
       
