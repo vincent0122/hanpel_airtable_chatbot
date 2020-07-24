@@ -70,7 +70,7 @@ apiRouter.post('/sayHello', async (req, res) => {
         outputs: [
           {
             simpleText: {
-              text: pic
+              text: "입력되었습니닷!"
             }
           }
         ]
