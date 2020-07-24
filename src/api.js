@@ -31,8 +31,8 @@ apiRouter.post('/sayHello', async (req, res) => {
   var contents = content.replace(/\"/g, "");
   var wri = writer.replace(/\"/g, "");
   var pic2 = pic.replace(/\"/g, "");
-  var pic2 = pic2.substring(5,pic2.length-1);
-  var pic3 = pic.split(',');
+  var pic3 = pic2.substring(5,pic2.length-1);
+  var pic4 = pic3.split(',');
   //var pic2 = '"' + pic + '"';
   //var pic3 = JSON.stringify(req.body);
 
@@ -55,7 +55,7 @@ apiRouter.post('/sayHello', async (req, res) => {
      //"내용" : contents
     
     "작성자": pic2,
-     "내용" : pic3
+     "내용" : pic3 + "^^^" + pic4
       });  
   
  
