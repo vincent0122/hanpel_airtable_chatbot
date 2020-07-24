@@ -44,7 +44,7 @@ apiRouter.post('/sayHello', async (req, res) => {
   
   await base('영업').create({
     "Attachments": [
-  //    {"url": pic3[0]},
+      {"url": pic4[0]}
   //    {"url": pic3[1]},
  //     {"url": pic3[2]},
  //     {"url": pic3[3]},
