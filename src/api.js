@@ -226,7 +226,7 @@ apiRouter.post('/showHello', function(req, res) {
   //var yy = JSON.stringify(req.body.userRequest.user.id);  // "2c2e571aa09087b61c573115011b68b41683e3634ca15ee80f7fb14c44765c4343"
   //var y = JSON.stringify(req.body.action.detailParams.type01_q01s01.origin);  // "2c2e571aa09087b61c573115011b68b41683e3634ca15ee80f7fb14c44765c4343"
   var z = JSON.stringify(req.body.action.detailParams.file.origin);
-  //var x = JSON.stringify(req.body.userRequest.user.id);
+  var x = JSON.stringify(req.body);
   
   const responseBody = {
 
@@ -238,7 +238,7 @@ apiRouter.post('/showHello', function(req, res) {
           //  imageUrl: "https://t1.daumcdn.net/friends/prod/category/M001_friends_ryan2.jpg",
           //  altText: "HELLO"
           simpleText: {
-            text: z
+            text: z + "***" + x
            
           }
         }
