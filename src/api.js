@@ -46,7 +46,7 @@ apiRouter.post('/sayHello', async (req, res) => {
         var wri2 = "임진석";
         break;
      
-      case "" : 
+      case "4f7a76d5ca088a897215c06004e3c9ef729b0af9b6d2e682c3abfea680c3114b28" : 
         var wri2 = "임진강";
         break;
       
@@ -58,7 +58,7 @@ apiRouter.post('/sayHello', async (req, res) => {
         var wri2 = "정소영";
         break;
       
-      case "" : 
+      case "7ade03d9eb16a38f45cc8f5855a368ad6a755f8480d80f794fee2631732514e1c0" : 
         var wri2 = "송혜주";
         break;
       
@@ -66,11 +66,11 @@ apiRouter.post('/sayHello', async (req, res) => {
         var wri2 = "이선화";
         break;
       
-      case "" : 
+      case "13ee3d86de309d4ba5bc27f1fe8809747caac66c710e60f0dd5ad65d9dd36f125b" : 
         var wri2 = "추승혜";
         break;
       
-      case "" : 
+      case "37f5153c8f36e0fe585605f71d2cf07ab609d58d2ad8b0e3d458b2f50b3bdb6778" : 
         var wri2 = "심동현";
         break;
       
