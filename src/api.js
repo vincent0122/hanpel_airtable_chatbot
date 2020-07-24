@@ -30,9 +30,9 @@ apiRouter.post('/sayHello', async (req, res) => {
   
   var contents = content.replace(/\"/g, "");
   var wri = writer.replace(/\"/g, "");
-  var pic = pic.replace(/\"/g, "");
-  var pic = pic.substring(5,pic.length-1);
-  var pic2 = pic.split(',');
+  var pic2 = pic.replace(/\"/g, "");
+  var pic2 = pic2.substring(5,pic2.length-1);
+  var pic3 = pic.split(',');
   //var pic2 = '"' + pic + '"';
   //var pic3 = JSON.stringify(req.body);
 
@@ -44,15 +44,18 @@ apiRouter.post('/sayHello', async (req, res) => {
   
   await base('영업').create({
     "Attachments": [
-      {"url": pic2[0]},
-      {"url": pic2[1]},
-      {"url": pic2[2]},
-      {"url": pic2[3]},
-      {"url": pic2[4]},    
-    }], 
+      {"url": pic3[0]},
+      {"url": pic3[1]},
+      {"url": pic3[2]},
+      {"url": pic3[3]},
+      {"url": pic3[4]},    
+    ], 
     "날짜": date,
-     "작성자": wri2,
-     "내용" : contents
+     //"작성자": wri2,
+     //"내용" : contents
+    
+    "작성자": pic2,
+     "내용" : pic3
       });  
   
  
@@ -64,7 +67,7 @@ apiRouter.post('/sayHello', async (req, res) => {
         outputs: [
           {
             simpleText: {
-              text: pic2
+              text: pic
             }
           }
         ]
