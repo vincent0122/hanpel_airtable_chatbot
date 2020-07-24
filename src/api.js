@@ -28,13 +28,16 @@ apiRouter.post('/sayHello', async (req, res) => {
   var writer = JSON.stringify(req.body.userRequest.user.id);  // "2c2e571aa09087b61c573115011b68b41683e3634ca15ee80f7fb14c44765c4343"
   var pic = JSON.stringify(req.body.action.detailParams.pic.origin);
   
+  
   var contents = content.replace(/\"/g, "");
   var wri = writer.replace(/\"/g, "");
   var pic2 = pic.replace(/\"/g, "");
   var pic3 = pic2.substring(5,pic2.length-1);
-  var pic4 = pic3.split(',');
-  //var pic2 = '"' + pic + '"';
-  //var pic3 = JSON.stringify(req.body);
+  var pu = pic3.split(',');
+  var pu2  = ["\"\"","\"\"","\"\"","\"\"","\"\"","\"\"","\"\"","\"\""];
+  
+  for (i=0 ; i<pu.length; i++)
+   {pu2[i] = pu[i]}
 
   switch (wri){
      case "2c2e571aa09087b61c573115011b68b41683e3634ca15ee80f7fb14c44765c4343" : 
@@ -45,11 +48,11 @@ apiRouter.post('/sayHello', async (req, res) => {
   await base('영업').create({
     "Attachments": [
       
-      {"url": pic4[0]},
-      {"url": pic4[1]},
-      {"url": pic4[2]}
- //     {"url": pic3[3]},
- //     {"url": pic3[4]},    
+      {"url": pu2[0]},
+      {"url": pu2[1]},
+      {"url": pu2[2]}
+      {"url": pu2[3]},
+      {"url": pu2[4]},    
     ], 
     "날짜": date,
     "작성자": wri2,
