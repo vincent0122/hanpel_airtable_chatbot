@@ -43,8 +43,45 @@ apiRouter.post('/sayHello', async (req, res) => {
 
   switch (wri){
      case "2c2e571aa09087b61c573115011b68b41683e3634ca15ee80f7fb14c44765c4343" : 
+        var wri2 = "임진석";
+        break;
+     
+      case  : 
         var wri2 = "임진강";
         break;
+      
+      case "44ad8cc1cfa54644ca2b31d066884fe56e6e7f62e874f88d3d2b9031f286a7404b" : 
+        var wri2 = "나준호";
+        break;
+      
+      case "1cf2d917e4daaf63a762a8cb1db925e0bc70559fa1bf9e1fc5bdb6fb5a426f8e30" : 
+        var wri2 = "정소영";
+        break;
+      
+      case "" : 
+        var wri2 = "송혜주";
+        break;
+      
+      case "" : 
+        var wri2 = "이선화";
+        break;
+      
+      case "" : 
+        var wri2 = "추승혜";
+        break;
+      
+      case "" : 
+        var wri2 = "심동현";
+        break;
+      
+      case "" : 
+        var wri2 = "임진아";
+        break;
+      
+      case "" : 
+        var wri2 = "강대현";
+        break;
+      
    }
   
   await base('영업').create({
