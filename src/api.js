@@ -46,7 +46,7 @@ apiRouter.post('/sayHello', async (req, res) => {
         var wri2 = "임진석";
         break;
      
-      case  : 
+      case "" : 
         var wri2 = "임진강";
         break;
       
