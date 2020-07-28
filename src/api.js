@@ -155,7 +155,7 @@ res.status(200).send(responseBody);
 
 apiRouter.post('/air_input_pc_f', async (req, res) => {
 
-/*  
+ 
   var content = JSON.stringify(req.body.action.detailParams.type01_q01s01.origin); // "하나\n"
   var writer = JSON.stringify(req.body.userRequest.user.id);  // "2c2e571aa09087b61c573115011b68b41683e3634ca15ee80f7fb14c44765c4343"
   var pic = item.get_arr();  
@@ -169,7 +169,7 @@ apiRouter.post('/air_input_pc_f', async (req, res) => {
   for (i=0 ; i<pu.length; i++)
    {
      pu2[i] = pu[i];
-   };  */
+   };  
   
   var contents = "123";
   var wri = "2c2e571aa09087b61c573115011b68b41683e3634ca15ee80f7fb14c44765c4343";
@@ -217,14 +217,14 @@ apiRouter.post('/air_input_pc_f', async (req, res) => {
    }
   
   await base('영업').create({
- /*   "Attachments": [
+    "Attachments": [
       
     {"url": pu2[0]},
       {"url": pu2[1]},
       {"url": pu2[2]},
       {"url": pu2[3]},
       {"url": pu2[4]},    
-    ], */
+    ], 
     "날짜": date,
     "작성자": wri2,
     "내용" : contents
@@ -239,7 +239,7 @@ apiRouter.post('/air_input_pc_f', async (req, res) => {
         outputs: [
           {
             simpleText: {
-              text: wri2
+              text: pic
             }
           }
         ]
