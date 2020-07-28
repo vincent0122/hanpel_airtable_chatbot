@@ -253,13 +253,8 @@ apiRouter.post('/air_input_pc_f', async (req, res) => {
 
 apiRouter.post('/checkId', function(req, res) {
   console.log(req.body);
-  //var x = JSON.stringify(req.body.);
-  //var x = JSON.stringify(req.body);
-  //var yy = JSON.stringify(req.body.userRequest.user.id);  // "2c2e571aa09087b61c573115011b68b41683e3634ca15ee80f7fb14c44765c4343"
-  //var y = JSON.stringify(req.body.action.detailParams.type01_q01s01.origin);  // "2c2e571aa09087b61c573115011b68b41683e3634ca15ee80f7fb14c44765c4343"
-  var z = JSON.stringify(req.body.action.detailParams.file.origin);
   var x = JSON.stringify(req.body);
-  
+
   const responseBody = {
 
     version: "2.0",
