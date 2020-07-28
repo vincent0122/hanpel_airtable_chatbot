@@ -161,15 +161,17 @@ apiRouter.post('/air_input_pc_f', async (req, res) => {
   var pic = item.get_arr();  
   var contents = content.replace(/\"/g, "");
   var wri = writer.replace(/\"/g, "");
-  var pic2 = pic.replace(/\"/g, "");
+  var pu2  = ["\"\"","\"\"","\"\"","\"\"","\"\"","\"\"","\"\"","\"\""];
+/*  var pic2 = pic.replace(/\"/g, "");
   var pic3 = pic2.substring(5,pic2.length-1);
   var pu = pic3.split(',');
-  var pu2  = ["\"\"","\"\"","\"\"","\"\"","\"\"","\"\"","\"\"","\"\""];
+  
   
   for (i=0 ; i<pu.length; i++)
    {
      pu2[i] = pu[i];
    };  
+  */
   
   var contents = "123";
   var wri = "2c2e571aa09087b61c573115011b68b41683e3634ca15ee80f7fb14c44765c4343";
