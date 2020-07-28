@@ -154,13 +154,14 @@ res.status(200).send(responseBody);
 });
 
 apiRouter.post('/air_input_pc_f', async (req, res) => {
- 
+
+/*  
   var content = JSON.stringify(req.body.action.detailParams.type01_q01s01.origin); // "하나\n"
   var writer = JSON.stringify(req.body.userRequest.user.id);  // "2c2e571aa09087b61c573115011b68b41683e3634ca15ee80f7fb14c44765c4343"
-//  var pic = item.get_arr();  
+  var pic = item.get_arr();  
   var contents = content.replace(/\"/g, "");
   var wri = writer.replace(/\"/g, "");
-/*  var pic2 = pic.replace(/\"/g, "");
+  var pic2 = pic.replace(/\"/g, "");
   var pic3 = pic2.substring(5,pic2.length-1);
   var pu = pic3.split(',');
   var pu2  = ["\"\"","\"\"","\"\"","\"\"","\"\"","\"\"","\"\"","\"\""];
@@ -169,6 +170,9 @@ apiRouter.post('/air_input_pc_f', async (req, res) => {
    {
      pu2[i] = pu[i];
    };  */
+  
+  var contents = "123";
+  var wri = "2c2e571aa09087b61c573115011b68b41683e3634ca15ee80f7fb14c44765c4343";
 
   switch (wri){
      case "2c2e571aa09087b61c573115011b68b41683e3634ca15ee80f7fb14c44765c4343" : 
@@ -209,19 +213,18 @@ apiRouter.post('/air_input_pc_f', async (req, res) => {
       
       case "89686eb7290a335a1314eb25c5d977a2eeb1826d84ee28bc599a2a65a57fd7ee34" : 
         var wri2 = "강대현";
-        break;
-      
+        break;    
    }
   
   await base('영업').create({
-    "Attachments": [
+ /*   "Attachments": [
       
- /*     {"url": pu2[0]},
+    {"url": pu2[0]},
       {"url": pu2[1]},
       {"url": pu2[2]},
       {"url": pu2[3]},
-      {"url": pu2[4]},    */
-    ], 
+      {"url": pu2[4]},    
+    ], */
     "날짜": date,
     "작성자": wri2,
     "내용" : contents
@@ -236,7 +239,7 @@ apiRouter.post('/air_input_pc_f', async (req, res) => {
         outputs: [
           {
             simpleText: {
-              text: "pic "
+              text: wri2
             }
           }
         ]
