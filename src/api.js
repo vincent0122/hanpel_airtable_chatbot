@@ -163,7 +163,7 @@ apiRouter.post('/air_input_pc_f', async (req, res) => {
   var pic = item.get_arr();  
   var contents = content.replace(/\"/g, "");
   var wri = writer.replace(/\"/g, "");
-  var pic2 = pic.replace(/\"/g, "");
+/*  var pic2 = pic.replace(/\"/g, "");
   var pic3 = pic2.substring(5,pic2.length-1);
   var pu = pic3.split(',');
   var pu2  = ["\"\"","\"\"","\"\"","\"\"","\"\"","\"\"","\"\"","\"\""];
@@ -171,7 +171,7 @@ apiRouter.post('/air_input_pc_f', async (req, res) => {
   for (i=0 ; i<pu.length; i++)
    {
      pu2[i] = pu[i];
-   };
+   };  */
 
   switch (wri){
      case "2c2e571aa09087b61c573115011b68b41683e3634ca15ee80f7fb14c44765c4343" : 
@@ -219,11 +219,11 @@ apiRouter.post('/air_input_pc_f', async (req, res) => {
   await base('영업').create({
     "Attachments": [
       
-      {"url": pu2[0]},
+ /*     {"url": pu2[0]},
       {"url": pu2[1]},
       {"url": pu2[2]},
       {"url": pu2[3]},
-      {"url": pu2[4]},    
+      {"url": pu2[4]},    */
     ], 
     "날짜": date,
     "작성자": wri2,
@@ -239,7 +239,7 @@ apiRouter.post('/air_input_pc_f', async (req, res) => {
         outputs: [
           {
             simpleText: {
-              text: pic + pic2 + pu + pu2
+              text: pic 
             }
           }
         ]
