@@ -154,13 +154,10 @@ res.status(200).send(responseBody);
 });
 
 apiRouter.post('/air_input_pc_f', async (req, res) => {
-
-  var today = new Date();
-  var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();//
-  
+ 
   var content = JSON.stringify(req.body.action.detailParams.type01_q01s01.origin); // "하나\n"
   var writer = JSON.stringify(req.body.userRequest.user.id);  // "2c2e571aa09087b61c573115011b68b41683e3634ca15ee80f7fb14c44765c4343"
-  var pic = item.get_arr();  
+//  var pic = item.get_arr();  
   var contents = content.replace(/\"/g, "");
   var wri = writer.replace(/\"/g, "");
 /*  var pic2 = pic.replace(/\"/g, "");
@@ -239,12 +236,13 @@ apiRouter.post('/air_input_pc_f', async (req, res) => {
         outputs: [
           {
             simpleText: {
-              text: pic 
+              text: "pic "
             }
           }
         ]
       }
     };
+  
   
     res.status(200).send(responseBody);
    
