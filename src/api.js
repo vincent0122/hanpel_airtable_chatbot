@@ -18,17 +18,34 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.use('/.netlify/functions/api', apiRouter);
+var today = new Date();
+var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();//
 
-apiRouter.post('/sayHello', async (req, res) => {
+//클로저 함수 시작
+function setArray(arr) { 
+  return{
+    get_arr : function(){
+      return arr;
+    },
+    set_arr: function(_url){
+      arr.push(_url);
+    },
+    ini_arr : function(){
+      arr = [];
+    }
+   };
+}
 
-  var today = new Date();
-  var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();//
+const item = setArray([]);
+//클로저 함수 끝
+
+
+apiRouter.post('/air_input_m', async (req, res) => {
   
   var content = JSON.stringify(req.body.action.detailParams.type01_q01s01.origin); // "하나\n"
   var writer = JSON.stringify(req.body.userRequest.user.id);  // "2c2e571aa09087b61c573115011b68b41683e3634ca15ee80f7fb14c44765c4343"
   var pic = JSON.stringify(req.body.action.detailParams.pic.origin);
-  
-  
+    
   var contents = content.replace(/\"/g, "");
   var wri = writer.replace(/\"/g, "");
   var pic2 = pic.replace(/\"/g, "");
@@ -74,11 +91,11 @@ apiRouter.post('/sayHello', async (req, res) => {
         var wri2 = "심동현";
         break;
       
-      case "" : 
+      case "00ecadf0b098f5a281c6995ca8976a5b78e6981d3f958f953c6c5ef3b879032743" : 
         var wri2 = "임진아";
         break;
       
-      case "" : 
+      case "89686eb7290a335a1314eb25c5d977a2eeb1826d84ee28bc599a2a65a57fd7ee34" : 
         var wri2 = "강대현";
         break;
       
@@ -96,10 +113,7 @@ apiRouter.post('/sayHello', async (req, res) => {
     "날짜": date,
     "작성자": wri2,
     "내용" : contents
-      });  
-  
- 
-  
+      });    
 
     const responseBody = {
       version: "2.0",
@@ -119,16 +133,34 @@ apiRouter.post('/sayHello', async (req, res) => {
     
 });
 
-apiRouter.post('/offAir', async (req, res) => {
+apiRouter.post('/air_input_pc', function(req, res) {
+  var pic = JSON.stringify(req.body.action.detailParams.file.origin);
+  item.set_arr(pic);
+
+const responseBody = {
+  version: "2.0",
+  template: {
+    outputs: [
+      {
+        simpleText: {
+          text: pic + "업로드(계속 진행하세요)"
+        }
+      }
+    ]
+  }
+};
+
+res.status(200).send(responseBody);
+});
+
+apiRouter.post('/air_input_pc_f', async (req, res) => {
 
   var today = new Date();
   var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();//
   
   var content = JSON.stringify(req.body.action.detailParams.type01_q01s01.origin); // "하나\n"
   var writer = JSON.stringify(req.body.userRequest.user.id);  // "2c2e571aa09087b61c573115011b68b41683e3634ca15ee80f7fb14c44765c4343"
-  var pic = JSON.stringify(req.body.action.detailParams.file.origin);
-  
-  
+  var pic = item.get_arr();  
   var contents = content.replace(/\"/g, "");
   var wri = writer.replace(/\"/g, "");
   var pic2 = pic.replace(/\"/g, "");
@@ -170,15 +202,15 @@ apiRouter.post('/offAir', async (req, res) => {
         var wri2 = "추승혜";
         break;
       
-      case "37f5153c8f36e0fe585605f71d2cf07ab609d58d2ad8b0e3d458b2f50b3bdb6778" : 
+    case "37f5153c8f36e0fe585605f71d2cf07ab609d58d2ad8b0e3d458b2f50b3bdb6778" : 
         var wri2 = "심동현";
         break;
       
-      case "" : 
+      case "00ecadf0b098f5a281c6995ca8976a5b78e6981d3f958f953c6c5ef3b879032743" : 
         var wri2 = "임진아";
         break;
       
-      case "" : 
+      case "89686eb7290a335a1314eb25c5d977a2eeb1826d84ee28bc599a2a65a57fd7ee34" : 
         var wri2 = "강대현";
         break;
       
@@ -207,7 +239,7 @@ apiRouter.post('/offAir', async (req, res) => {
         outputs: [
           {
             simpleText: {
-              text: pic
+              text: pic + pic2 + pu + pu2
             }
           }
         ]
@@ -219,7 +251,7 @@ apiRouter.post('/offAir', async (req, res) => {
     
 });
 
-apiRouter.post('/showHello', function(req, res) {
+apiRouter.post('/checkId', function(req, res) {
   console.log(req.body);
   //var x = JSON.stringify(req.body.);
   //var x = JSON.stringify(req.body);
@@ -234,10 +266,7 @@ apiRouter.post('/showHello', function(req, res) {
     template: {
       outputs: [
         {
-          //simpleImage : {
-          //  imageUrl: "https://t1.daumcdn.net/friends/prod/category/M001_friends_ryan2.jpg",
-          //  altText: "HELLO"
-          simpleText: {
+           simpleText: {
             text: x
            
           }
