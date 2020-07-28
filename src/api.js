@@ -45,21 +45,22 @@ apiRouter.post('/air_input_m', async (req, res) => {
   var content = JSON.stringify(req.body.action.detailParams.type01_q01s01.origin); // "하나\n"
   var writer = JSON.stringify(req.body.userRequest.user.id);  // "2c2e571aa09087b61c573115011b68b41683e3634ca15ee80f7fb14c44765c4343"
   var pic = JSON.stringify(req.body.action.detailParams.pic.origin);
+  var pu2  = ["\"\"","\"\"","\"\"","\"\"","\"\"","\"\"","\"\"","\"\""];
   
   if (pic !== 'undefined') {
    var pic2 = pic.replace(/\"/g, "");
    var pic3 = pic2.substring(5,pic2.length-1);
    var pu = pic3.split(',');
+    
+      for (i=0 ; i<pu.length; i++)
+   {
+     pu2[i] = pu[i];
+   };
   }
   
   var contents = content.replace(/\"/g, "");
   var wri = writer.replace(/\"/g, ""); 
-  var pu2  = ["\"\"","\"\"","\"\"","\"\"","\"\"","\"\"","\"\"","\"\""];
   
-  for (i=0 ; i<pu.length; i++)
-   {
-     pu2[i] = pu[i];
-   };
 
   switch (wri){
      case "2c2e571aa09087b61c573115011b68b41683e3634ca15ee80f7fb14c44765c4343" : 
