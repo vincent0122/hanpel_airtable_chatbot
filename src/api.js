@@ -244,7 +244,7 @@ apiRouter.post('/air_input_pc_f', async (req, res) => {
       });  
   
  
-  
+   item.ini_arr();
 
     const responseBody = {
       version: "2.0",
