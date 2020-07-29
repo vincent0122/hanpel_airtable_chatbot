@@ -150,7 +150,7 @@ const responseBody = {
     outputs: [
       {
         simpleText: {
-          text: pic + "업로드(계속 진행하세요)" + arr
+          text: pic + "업로드(계속 진행하세요)" + item.arr
         }
       }
     ]
