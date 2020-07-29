@@ -143,14 +143,16 @@ apiRouter.post('/air_input_m', async (req, res) => {
 apiRouter.post('/air_input_pc', function(req, res) {
   var pic = JSON.stringify(req.body.action.detailParams.file.origin);
   item.set_arr(pic);
-
-const responseBody = {
+  var pic2 = item.get_arr();
+  var pic2 = pic2.join(',');
+  
+ const responseBody = {
   version: "2.0",
   template: {
     outputs: [
       {
         simpleText: {
-          text: pic + "업로드(계속 진행하세요)" + item.arr
+          text: pic + "업로드(계속 진행하세요)" + pic2
         }
       }
     ]
@@ -173,9 +175,11 @@ apiRouter.post('/air_input_pc_f', async (req, res) => {
   } catch(e){
     var pic = "";
   } finally{
+  
+  var pic = pic.join(',');
   var pu2  = ["\"\"","\"\"","\"\"","\"\"","\"\"","\"\"","\"\"","\"\""]; 
   var pic2 = pic.replace(/\"/g, "");
-  var pic3 = pic2.substring(5,pic2.length-1);
+  var pic3 = pic2.substring(0,pic2.length);
   var pu = pic3.split(',');
     
       for (i=0 ; i<pu.length; i++)
@@ -253,7 +257,7 @@ apiRouter.post('/air_input_pc_f', async (req, res) => {
         outputs: [
           {
             simpleText: {
-              text: "pic"
+              text: pu
             }
           }
         ]
