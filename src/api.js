@@ -252,7 +252,7 @@ apiRouter.post('/air_input_pc_f', async (req, res) => {
         outputs: [
           {
             simpleText: {
-              text: pic2
+              text: "입력되었습니닷!"
             }
           }
         ]
