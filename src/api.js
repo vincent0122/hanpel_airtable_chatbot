@@ -170,13 +170,10 @@ apiRouter.post('/air_input_pc_f', async (req, res) => {
   var contents = content.replace(/\"/g, "");
   var wri = writer.replace(/\"/g, "");
   
-    try{
-    var pic = item.get_arr(); 
-    var pic = pic.join(',');
-  } catch(e){
-    var pic = "";
-  } finally{
- 
+    
+  var pic = item.get_arr(); 
+  var pic2 = pic.join(',');
+  /* 
   var pu2  = ["\"\"","\"\"","\"\"","\"\"","\"\"","\"\"","\"\"","\"\""]; 
   var pic2 = pic.replace(/\"/g, "");
   var pic3 = pic2.substring(0,pic2.length);
@@ -186,11 +183,8 @@ apiRouter.post('/air_input_pc_f', async (req, res) => {
    {
      pu2[i] = pu[i];
    };
-  }   
-    
- //var content = "123"
- // var writer = "2c2e571aa09087b61c573115011b68b41683e3634ca15ee80f7fb14c44765c4343"
- // var pic = item.get_arr();  
+    */ 
+
 
   switch (wri){
      case "2c2e571aa09087b61c573115011b68b41683e3634ca15ee80f7fb14c44765c4343" : 
@@ -257,7 +251,7 @@ apiRouter.post('/air_input_pc_f', async (req, res) => {
         outputs: [
           {
             simpleText: {
-              text: pu
+              text: pic2
             }
           }
         ]
