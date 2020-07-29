@@ -259,7 +259,7 @@ apiRouter.post('/air_input_pc_f', async (req, res) => {
       }
     };
   
-    ini_arr();
+   
     res.status(200).send(responseBody);
    
     
