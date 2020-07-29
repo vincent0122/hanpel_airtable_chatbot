@@ -175,7 +175,7 @@ apiRouter.post('/air_input_pc_f', async (req, res) => {
   var pic2 = pic.join(',');
    
   var pu2  = ["\"\"","\"\"","\"\"","\"\"","\"\"","\"\"","\"\"","\"\""]; 
-  /*
+ 
   var pic2 = pic.replace(/\"/g, "");
   var pic3 = pic2.substring(0,pic2.length);
   var pu = pic3.split(',');
@@ -184,7 +184,7 @@ apiRouter.post('/air_input_pc_f', async (req, res) => {
    {
      pu2[i] = pu[i];
    };
-    */ 
+   
 
 
   switch (wri){
@@ -259,7 +259,7 @@ apiRouter.post('/air_input_pc_f', async (req, res) => {
       }
     };
   
-  
+    ini_arr();
     res.status(200).send(responseBody);
    
     
