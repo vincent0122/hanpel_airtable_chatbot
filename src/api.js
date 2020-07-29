@@ -249,7 +249,7 @@ apiRouter.post('/air_input_pc_f', async (req, res) => {
         outputs: [
           {
             simpleText: {
-              text: pic
+              text: "pic"
             }
           }
         ]
