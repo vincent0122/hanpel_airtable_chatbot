@@ -108,7 +108,7 @@ apiRouter.post('/air_input_m', async (req, res) => {
       
    }
   
-  await base('영업').create({
+  await base('총무,수출입').create({
     "Attachments": [
       
       {"url": pu2[0]},
@@ -229,7 +229,7 @@ apiRouter.post('/air_input_pc_f', async (req, res) => {
         break;    
    }
   
-  await base('영업').create({
+  await base('총무,수출입').create({
     "Attachments": [
       
     {"url": pu2[0]},
