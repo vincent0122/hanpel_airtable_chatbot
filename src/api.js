@@ -12,12 +12,12 @@ const logger = require("morgan");
 const bodyParser = require("body-parser");
 
 const Airtable = require("airtable");
-const base = new Airtable({ apiKey: "keynCOHYwnnoQZDeB" }).base(
+const base = new Airtable({ apiKey: process.env.AIRTABLE }).base(
   "apptSTO7G7lbYD7gu"
 );
 
-const getName = require("./getName")
 
+import getName from ("./getName")
 
 app.use(logger("dev", {}));
 app.use(bodyParser.json());

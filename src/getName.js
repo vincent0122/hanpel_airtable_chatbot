@@ -1,4 +1,4 @@
-export default getName = (wri) => data.filter(el=> el.wri === wri )
+const getName = (wri) => data.filter(el=> el.wri === wri )
 
 const data = [
   {
@@ -42,3 +42,5 @@ const data = [
     "name": "강대현"
   }
 ]
+
+export default getName
