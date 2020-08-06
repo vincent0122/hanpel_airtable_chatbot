@@ -17,7 +17,7 @@ const base = new Airtable({ apiKey: process.env.AIRTABLE }).base(
 );
 
 
-import getName from ("./getName")
+import getName from "./getName"
 
 app.use(logger("dev", {}));
 app.use(bodyParser.json());
