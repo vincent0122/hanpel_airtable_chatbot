@@ -1,4 +1,5 @@
-const getName = (wri) => data.filter(el=> el.wri === wri )
+const getName = (wri) => data.filter(el=> el.wri === wri ) //getName[0].name 으로 호출
+
 
 const data = [
   {
@@ -43,4 +44,5 @@ const data = [
   }
 ]
 
-export default getName
+//export default getName
+module.exports = getName
