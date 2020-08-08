@@ -160,8 +160,8 @@ apiRouter.post("/air_input_pc", (req, res) => {
       outputs: [
         {
           basicCard: {
-            title: "보물상자",
-            description: "보물상자 안에는 뭐가 있을까",
+            title: "AIRTABLE",
+            description: "DO AIRTABLE",
             thumbnail: {
               imageUrl:
                 "http://k.kakaocdn.net/dn/83BvP/bl20duRC1Q1/lj3JUcmrzC53YIjNDkqbWK/i_6piz1p.jpg",
@@ -178,14 +178,9 @@ apiRouter.post("/air_input_pc", (req, res) => {
             },
             buttons: [
               {
-                action: "message",
-                label: "열어보기",
-                messageText: "짜잔! 우리가 찾던 보물입니다",
-              },
-              {
-                action: "webLink",
-                label: "입력하기",
-                webLinkUrl: "www.hanpel.com",
+                action: "block",
+                label: "내용입력하기",
+                blockId: "5f1928d4285a140001494e12",
               },
             ],
           },
