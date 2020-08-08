@@ -15,7 +15,7 @@ const Airtable = require("airtable");
 const base = new Airtable({apiKey: 'keynCOHYwnnoQZDeB'}).base('apptSTO7G7lbYD7gu');
 
 
-import getName from "./getName"
+//import getName from "./getName"
 
 app.use(logger("dev", {}));
 app.use(bodyParser.json());
