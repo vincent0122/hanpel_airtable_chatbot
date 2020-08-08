@@ -183,7 +183,7 @@ apiRouter.post("/air_input_pc", (req, res) => {
                 messageText: "짜잔! 우리가 찾던 보물입니다",
               },
               {
-                action: "block",
+                action: "webLink",
                 label: "입력하기",
                 webLinkUrl: "www.hanpel.com",
               },
