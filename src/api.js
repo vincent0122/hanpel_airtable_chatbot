@@ -204,6 +204,7 @@ apiRouter.post("/air_input_pc_f", async (req, res) => {
   var writer = JSON.stringify(req.body.userRequest.user.id); // "2c2e571aa09087b61c573115011b68b41683e3634ca15ee80f7fb14c44765c4343"
   var contents = content.replace(/\"/g, "");
   var wri = writer.replace(/\"/g, "");
+  var blockId = req.body.userRequest.block.id;
 
   var pic = item.get_arr();
   var pic = pic.join(",");
@@ -281,7 +282,7 @@ apiRouter.post("/air_input_pc_f", async (req, res) => {
       outputs: [
         {
           simpleText: {
-            text: "입력되었습니닷!",
+            text: blockId + "입력되었습니닷!",
           },
         },
       ],
