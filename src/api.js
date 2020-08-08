@@ -185,7 +185,7 @@ apiRouter.post("/air_input_pc", (req, res) => {
               {
                 action: "block",
                 label: "입력하기",
-                blockId: "sf3gmjguuel553rm6vk4qp0e",
+                blockId: "raq4e0gq2n226l7o0qgtqxxb",
               },
             ],
           },
